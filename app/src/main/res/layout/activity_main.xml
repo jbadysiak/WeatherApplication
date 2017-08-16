@@ -1,0 +1,1438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context="com.jakubbadysiak.weatherapplication.MainActivity">
+
+    <ViewFlipper
+        android:id="@+id/viewFlipper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <RelativeLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="City"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@+id/txtCity"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp" />
+
+            <TextView
+                android:id="@+id/txtCelsius"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Celsius"
+                android:textAllCaps="false"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:typeface="normal" />
+
+            <TextView
+                android:id="@+id/txtDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtCelsius"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="Text"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtDescription"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="Humidity"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtLastUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtHumidity"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="LastUpdate"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtCity1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="City"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/txtCity1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView1"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView7"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView8"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtDate9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="Date"
+                        android:textSize="20sp"
+                        android:textStyle="normal" />
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp" />
+
+                    <TextView
+                        android:id="@+id/txtCelsius9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="Celsius"
+                        android:textAllCaps="false"
+                        android:textSize="20sp"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView10"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView11"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView12"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView13"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView14"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView15"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView16"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView17"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView18"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate19"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView19"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius19"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView20"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate21"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView21"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius21"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView22"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate23"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView23"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius23"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate24"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView24"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius24"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate25"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView25"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius25"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate26"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView26"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius26"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate27"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView27"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius27"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate28"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView28"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius28"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate29"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView29"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius29"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate30"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView30"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius30"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate31"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView31"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius31"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate32"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView32"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius32"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate33"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView33"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius33"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtDate34"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Date"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView34"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp" />
+
+                        <TextView
+                            android:id="@+id/txtCelsius34"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Celsius"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+
+    </ViewFlipper>
+
+</RelativeLayout>
