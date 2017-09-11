@@ -294,6 +294,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
+
                         Intent intent = new Intent(Intent.ACTION_MAIN);
                         intent.addCategory(Intent.CATEGORY_HOME);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
