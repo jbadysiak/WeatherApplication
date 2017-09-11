@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.jakubbadysiak.weatherapplication.SplashScreen">
 
-
     <com.felipecsl.gifimageview.library.GifImageView
         android:id="@+id/gifImageView"
         android:scaleType="fitCenter"

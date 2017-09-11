@@ -17,7 +17,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +35,8 @@ import com.squareup.picasso.Picasso;
 
 import java.lang.reflect.Type;
 
+import static java.lang.System.exit;
+
 public class MainActivity extends AppCompatActivity implements LocationListener {
 
     private static int SPLASH_TIME_OUT = 4000;
@@ -43,7 +44,6 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     private ViewFlipper viewFlipper;
     private TextView txtCity, txtLastUpdate, txtDescription, txtHumidity, txtCelsius;
     private ImageView imageView;
-    private Button buttonUpdateLocation;
 
     private TextView txtCelsius1, txtDate1, txtCity1, txtCelsius2, txtDate2, txtCelsius3, txtDate3, txtCelsius4, txtDate4;
     private TextView txtCelsius5, txtDate5, txtCelsius6, txtDate6, txtCelsius7, txtDate7, txtCelsius8, txtDate8;
@@ -77,7 +77,6 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
         txtCity = (TextView) findViewById(R.id.txtCity);
@@ -272,7 +271,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         Toast.makeText(getApplicationContext(),"Update your location", Toast.LENGTH_SHORT).show();
                         WeatherClient weatherClient = new WeatherClient(baseApi);
-                        //ForecastWeatherClient forecastWeatherClient = new ForecastWeatherClient(baseApi);
+                        ForecastWeatherClient forecastWeatherClient = new ForecastWeatherClient(baseApi);
                         weatherApiService = weatherClient.getApiService();
                         //forecastWeatherApiService = forecastWeatherClient.getApiService();
                         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -299,6 +298,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                         intent.addCategory(Intent.CATEGORY_HOME);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
+                        exit(1);
                         return true;
                     }
                 });
